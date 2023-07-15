@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div>정희은</div>
+</body>
+  <script>
+    const wrapping = document.querySelector('#wrapping');
+    const URLList = ["https://ginger-turn-ce0.notion.site/89d6f45e5c8346d2af98abe89dc073af","https://github.com/","https://www.naver.com/"];
+    for (let i = 0; i < URLList.length; i++) {
+      let temp = `<a href="${URLList[i]}">${URLList[i]}}</a></br>`;
+    document.body.innerHTML += temp;
+  };
+    </script>
+</html>

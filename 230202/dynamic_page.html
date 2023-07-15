@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- <div id="wrap"></div> -->
+  <script>
+    const wrap =document.querySelector('#wrap');
+    // const wrap =document.getElementById('wrap');
+    const URLList = ["https://www.naver.com/","https://github.com/","https://www.figma.com/files/recents-and-sharing/recently-viewed?fuid=1206773707654341955"];
+    for(let i= 0; i < URLList.length; i++){
+      let temp = `<a href="${URLList[i]}">${URLList[i]}</a><br>`;
+      document.body.innerHTML += temp;
+      // document.getElementById('wrap').innerHTML += temp;
+    }
+  </script>
+</body>
+</html>
