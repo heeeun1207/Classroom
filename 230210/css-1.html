@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    ol{
+      width: 1000px;
+      height: 500px;
+      background-color: aquamarine;
+      list-style-type: none;
+    
+
+    /*부모에게 '자식을 위한 구도(레이아웃) 에 대한 속성 부여 */
+    /*
+      문서의 서식(구도 혹은 디자인)의 요구가 다양해짐에 따라 유지보수가 불편한
+      '직접 지정' 방식의 한계를 극복하기 위해 디자인 작업 혹은 구도 작업을
+      편리하게 제작하기 위해 flex 같은 속성을 지원함.
+
+      일반적으로 절대값(px) 을 사용하지 않는 경향이 있어서 다소 비관적이나, 
+      유연함 측면에서는 멀티디바이스 환경에서 대응 하는 것에 매우 유리하게 작용함.
+      
+      아래의 속성이 대표적인 flex 개열의 하위 속성들이다.
+      자주 활용하는 4개 작성되었으나 활용 목표에 따라서 
+      상당이 다양한 속성들을 지원하므도 정보를 취득해서 활용하는 편이다.
+    */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    }
+    li{
+      border : 1px solid black;
+    }
+  </style>
+</head>
+<body>
+  <ol>
+    <li>items-1</li>
+    <li>items-2</li>
+    <li>items-3</li>
+    <li>items-4</li>
+  </ol> 
+</body>
+</html>
