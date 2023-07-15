@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      /* 외곽선 처리로 인해 생기는 박스 사이즈 결정 변화 -> 변경 */
+      box-sizing: border-box;
+    }
+    body{
+      margin: 0px;
+    }
+    /* 관계 선택자 : body > div */
+    #container{
+      /* 보이는 화면의 100%를(FHD인 경우 1920px이 됨) 결정하는 단어 */
+      width: 100vw;
+      height: 100vh;
+      background-color : darkgray;
+    }
+    /* 관계 선택자 : body > div > div */
+    #container > #wrapper {
+      /* 부모 요소의 결정된 너비의 90% 사용 */
+      width: 90%;
+      height: 90%;
+      /* 결과적으로 정확한 너비값을 개발자가 알지 않아도 사용할 수 있는 형태 */
+      background-color: #fff;
+    }
+    /* 관계선택자 : body > div > div > div */
+    #container > #wrapper > div {
+      width: 40%;
+      height: 90%;
+      border : 1px solid black;
+      /* div 태그의 기본 display 속성을 버리고 커스터마이징 진행 */
+      display: inline-block;
+    }
+    /* 관계선택자 : body > div > div > div:첫번째 자식 */
+    #container > #wrapper > div:nth-child(1) {
+      background-color: coral;
+    }
+    /* 관계선택자 : body > div > div > div:두번째 자식 */
+    #container > #wrapper > div:nth-child(2) {
+      background-color: cornflowerblue;
+    } 
+    /* 관계선택자 : body > div > div > div:두번째 자식 > div 태그 들 */
+    #container > #wrapper > div:nth-child(2) > div {
+      width: 80%;
+      height: 30%;
+      border: 1px solid brown;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div id="wrapper">
+      <div></div>
+      <div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </div> 
+</body>
+</html>
