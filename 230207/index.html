@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>낯설은 마크업을 사용해도 당황하지 않기</title>
+  <style>
+    /* 1. *(에스터리스크) 는 무엇을 의미할까요? */
+    /* 모든 요소를 선택하는 CSS 전체 선택자 */ 
+    *{
+      margin:0;
+      padding:0;     /* padding 은 무엇을 의미할까요? -> 개발자 도구에서 확인가능한거? */
+      /*요소의 콘텐츠 영역과 경계(border) 사이의 간격을 지정하는 CSS 속성입니다.*/
+
+      box-sizing:border-box;
+    }
+    body > div {
+      /* 일반적인 선택자(selector)가 아닌 꺽쇠가 달려있는 형태를 무엇을 의미할까요? */
+      /* 꺽쇠(>)는 자식 선택자(child selector)를 의미하며, 특정 요소의 직계 자식 요소를 선택합니다. */
+      
+      width: 100vw; /* pixel이 아닌 낯설은 단위인 vw는 무엇을 의미할까요? */
+      /* vw는 뷰포트 너비(viewport width)의 상대적인 단위입니다. 뷰포트 너비의 1/100을 나타냅니다. */
+      
+      height: 100vh; /* vh 단위는 무엇을 의미할까요? */
+      /* vh는 뷰포트 높이(viewport height)*/
+    }
+
+    .bg-color-1 {background-color: aqua;}
+    .bg-color-2 {background-color: blue;}
+    .bg-color-3 {background-color: blueviolet;}
+  </style>
+</head>
+<body>
+  <div class="bg-color-1"></div>
+  <div class="bg-color-2"></div>
+  <div class="bg-color-3"></div>
+</body>
+</html>
