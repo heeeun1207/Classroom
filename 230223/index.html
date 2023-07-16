@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <ul id="menu">
+    <li>items-1</li>
+    <li>items-2</li>
+    <li>items-3</li>
+    <li>items-4</li>
+    <li>items-5</li>
+  </ul>
+  
+  <script>
+    let menu =window.document.getElementById('menu');
+    // getElementById('id값') : id값을 가진 요소를 찾아서 반환한다.
+    // DOM API, 즉 HTML을 객체(object)로 해석(parsing)한 데이터이기 때문에 
+    // 다양한 속성들과 함수들을 '지원'한다.
+    // 개발하기 편하게 여러 기능들을 지원하는 것을 api라고 한다.
+
+    console.dir(menu); // 구조를 먼저보는 것이 훨씬 중요하다.
+    //문서의 구조를 '추적(tracking)' 혹은 '조회(searching)'하는 '절차'를 '검증'한다.
+    console.log(menu.children);
+    console.log(menu.children[0]);
+    console.dir(menu.children[0].style);
+    menu.children[0].style.color = 'red'; //검증완료
+
+  </script>
+</body>
+</html>
