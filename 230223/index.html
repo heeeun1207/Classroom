@@ -26,8 +26,23 @@
     console.log(menu.children);
     console.log(menu.children[0]);
     console.dir(menu.children[0].style);
-    menu.children[0].style.color = 'red'; //검증완료
+    // menu.children[0].style.color = 'red'; //검증완료
+    
+    for(let index =0; index< menu.children.length; index++){
+      //length, "길이값이 얼마인지 모르지만 값(value)가 정해졌다."
 
+      //if(menu.children[index].textContent === "item-3") ?
+
+      if(index ===2) { // 조건식이 참 true이면 
+        //참 일때 실행 구문 
+        menu.children[index].style.color ="red";
+
+      }else{ // else, "참이 아닐 때" 실행구문 
+
+        menu.children[index].style.backgroundColor ="gray";
+      }
+    } // 중괄호는 일련의 '영역'을 구분하는 역할을 한다.
+    //영역을 스코프(scope)라고 부른다.
   </script>
 </body>
 </html>
