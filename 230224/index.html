@@ -8,6 +8,7 @@
 <body>
   <div id="root">
     <h1></h1>
+    <h2></h2>
   </div>
   <script>
     let root = document.getElementById('root');
@@ -19,6 +20,16 @@
     h1Tag.setAttribute('id','title');
     h1Tag.textContent = percentCalculatorReturnString(21, 200);
     root.appendChild(h1Tag);
+
+    function add(real,total){
+      let result2 = (real + total);
+      return "합계는 " + result2 + "입니다."
+    }
+
+    let h2Tag =document.createElement('h2');
+    h2Tag.textContent = add(10,30);
+    h2Tag.style.color = "red";
+    root.appendChild(h2Tag);
   </script>
 </body>
 </html>
