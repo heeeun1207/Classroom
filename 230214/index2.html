@@ -1,12 +1,76 @@
-<!-- 불필요한 스타일 중복 제거하기  -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: lightgrey;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    #container {
+      width: 1200px;
+      height: 700px;
+      background-color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    #top, footer {
+      width: 100%;
+      height: 100px;
+      display: flex;
+      align-items: center;
+    }
+    #top > #logo, #top > nav, footer > #Flogo, footer > #sns {
+      flex: 2;
+      height: 100%;
+      border: 1px solid black;
+    }
+    #top > nav, #container > #img, main > div, footer > #cl {
+      flex: 9;
+      height: 100%;
+      border: 1px solid black;
+    }
+    #container > #img {
+      width: 100%;
+      height: 300px;
+    }
+    main {
+      width: 100%;
+      height: 200px;
+      display: flex;
+      align-items: center;
+    }
+    main > div {
+      flex: 1;
+    }
+  </style>
 </head>
 <body>
-  
+  <div id="container">
+    <div id="top">
+      <div id="logo">로고</div>
+      <nav>A</nav>
+    </div>
+    <div id="img">이미지</div>
+    <main>
+      <div>공지사항</div>
+      <div>배너</div>
+      <div>바로가기</div>
+    </main>
+    <footer>
+      <div id="Flogo">로고</div>
+      <div id="cl">카피라이트</div>
+      <div id="sns">SNS</div>
+    </footer>
+  </div>
 </body>
 </html>
