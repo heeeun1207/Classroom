@@ -10,9 +10,26 @@
   <!-- 정적으로 만들어진 root id 의 div 태그 -->
 <script>
   var root = document.getElementById('root');
-  root.innerHTML ="<h1>동적으로 요소만들기.</h1><h2>동적으로 h2태그 추가하기. <h2>";
+  // root.innerHTML ="<h1>동적으로 요소만들기.</h1><h2>동적으로 h2태그 추가하기. <h2>";
   //동적으로 만들어진 <h1> <h2> 태그 
-  
+
+  var h1Element = document.createElement('h1');
+  h1Element.textContent = "동적으로 요소만들기";
+
+  var h2Element = document.createElement('h2');
+  h2Element.textContent = "동적으로 h2태그 추가하기";
+
+  root.appendChild(h1Element);
+  root.appendChild(h2Element);
 </script>
 </body>
 </html>
+<!-- 두 가지 방법(innerHTML 및 createElement + appendChild) 모두 동일한 결과를 얻을 수 있습니다. 가독성과 유지보수 측면에서는 createElement 방식이 일반적으로 더 선호됩니다. 
+
+1. 구조적인 코드: createElement 방식은 요소를 생성하고 추가하는 과정을 명시적으로 보여줍니다. 따라서 코드가 더 구조적이며, 요소를 어디에 추가하는지 명확하게 파악할 수 있습니다.
+
+2. 오류 검출 용이: createElement 방식에서는 요소 생성 및 추가 과정이 분리되어 있어 오류가 발생했을 때 문제를 파악하기 쉽습니다.
+
+3. 안전성: innerHTML은 HTML 문자열을 직접 파싱하므로 잠재적인 보안 위험이 있을 수 있습니다. 반면 createElement은 요소를 직접 생성하므로 안전성 면에서 우수합니다.
+
+단순히 결과를 출력하는 측면에서는 innerHTML이 좀 더 간단하고 빠른 경우도 있습니다. 하지만 일반적으로는 가독성, 유지보수성, 안전성을 고려하여 createElement 방식이 더 권장됩니다. 따라서 가능하면 createElement 방식을 사용하여 동적으로 요소를 생성하고 추가하는 것이 좋습니다. -->
