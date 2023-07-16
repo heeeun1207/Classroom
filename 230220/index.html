@@ -26,17 +26,23 @@
   // 밀키스와 코카콜라의 가격차이 -> 1900원을 암산하지말고 계산기 만들기 ! 
   // JS와 DOM API 문서 데이터를 추출하기
   // 1. 밀키스가격과 코카콜라 가격의 요소를 가져오기
-  const milkisPriceElement = document.querySelector("p");
+  // const milkisPriceElement = document.querySelector("p");
   // querySelectorAll은 모든 요소를 NodeList로 가져오기 때문에, 
   // 두 번째 <p> 요소를 얻기 위해 추가 작업이 필요하다.
-  const cokePriceElements = document.querySelectorAll("div > p");
+
+  const cokePriceElements = document.querySelectorAll("p");
   console.log(cokePriceElements);
+  const milkisPriceElements =document.querySelectorAll("p");
+    const milkisPriceElement = cokePriceElements[0];
+    console.log(milkisPriceElement);
+
 
     // 두 번째 <p> 요소의 인덱스는 1입니다. (0부터 시작)
     const cokePriceElement = cokePriceElements[1];
     console.log(cokePriceElement);
 
-    
+
+
   // 2. 가격 데이터를 정수로 변경하기
   // 3. 가격차이 계산하기
   // 4. 콘솔출력하기
