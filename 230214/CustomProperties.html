@@ -1,0 +1,100 @@
+<!-- CSS 변수(스타일 상수)를 사용하여 주요 값들을 정의 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 스타일 상수 정의 */
+    :root {
+      --primary-color: black;
+      --secondary-color: lightgrey;
+      --container-width: 1200px;
+      --container-height: 700px;
+      --header-footer-height: 100px;
+      --image-height: 300px;
+      --main-height: 200px;
+    }
+
+    body {
+      margin: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: var(--secondary-color);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #container {
+      width: var(--container-width);
+      height: var(--container-height);
+      background-color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #top, footer {
+      width: 100%;
+      height: var(--header-footer-height);
+      display: flex;
+      align-items: center;
+    }
+
+    #top > #logo, #top > nav, footer > #Flogo, footer > #sns {
+      flex: 1;
+      height: 100%;
+      border: 1px solid var(--primary-color);
+    }
+
+    #top > #logo, footer > #sns {
+      flex-basis: 10%;
+    }
+
+    #top > nav, #container > #img, main > div, footer > #cl {
+      flex: 9;
+      height: 100%;
+      border: 1px solid var(--primary-color);
+    }
+
+    #container > #img {
+      width: 100%;
+      height: var(--image-height);
+    }
+
+    main {
+      width: 100%;
+      height: var(--main-height);
+      display: flex;
+      align-items: center;
+    }
+
+    main > div {
+      flex: 1;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div id="top">
+      <div id="logo">로고</div>
+      <nav>A</nav>
+    </div>
+    <div id="img">이미지</div>
+    <main>
+      <div>공지사항</div>
+      <div>배너</div>
+      <div>바로가기</div>
+    </main>
+    <footer>
+      <div id="Flogo">로고</div>
+      <div id="cl">카피라이트</div>
+      <div id="sns">SNS</div>
+    </footer>
+  </div>
+</body>
+</html>
