@@ -34,15 +34,19 @@
       const milkisPriceElement = allPriceElements[0];
       const cokePriceElement = allPriceElements[1];
       console.log(cokePriceElement); // 2800원 
-
-
-  // querySelectorAll은 모든 요소를 NodeList로 가져오기 때문에, 
-  // 두 번째 <p> 요소를 얻기 위해 추가 작업이 필요하다.
-
-
-
-
   // 2. 가격 데이터를 정수로 변경하기
+  // parseInt : "Parse Integer" 정수로 변환하다.
+  // parseInt(string, radix);
+  
+  //먼저 숫자에 접근하기 
+  const priceText = milkisPriceElement.textContent; 
+  const milkisPrice = parseInt(priceText);
+  console.log(milkisPrice);
+
+  //한번에 문자열중에서 숫자 추출하기
+  const cokePrice = parseInt(cokePriceElement.textContent);
+  console.log(cokePrice);
+
   // 3. 가격차이 계산하기
   // 4. 콘솔출력하기
 
