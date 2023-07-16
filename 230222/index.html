@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <ul id="menu">
+    <li>items-1</li>
+    <li>items-2</li>
+    <li>items-3</li>
+    <li>items-4</li>
+    <li>items-5</li>
+  </ul>
+  <script>
+    let menu = document.getElementById('menu');
+    // 다섯개의 <li> element가 구축되어있다.
+    // 해당 <li> 태그 '모두'에 파란색 색상을 부여하고자 한다면 어떻게 해야 할까?
+    console.log(menu);
+    let litags =document.querySelectorAll('li');
+    //<li> 요소를 forEach로 반복하면서 각 요소에 스타일을 적용하기
+    litags.forEach(li => {
+      li.style.color = "blue";
+    })
+  </script>
+</body>
+</html>
