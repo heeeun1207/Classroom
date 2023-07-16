@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root">
+    <h1></h1>
+  </div>
+  <script>
+    let root = document.getElementById('root');
+    function percentCalculatorReturnString(realValue, totalValue){
+      let result = (realValue / totalValue) * 100;
+      return result + "%";
+    }
+    let h1Tag =document.createElement('h1');
+    h1Tag.setAttribute('id','title');
+    h1Tag.textContent = percentCalculatorReturnString(21, 200);
+    root.appendChild(h1Tag);
+  </script>
+</body>
+</html>
