@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* reset */
+    * {margin:0px; padding:0px; box-sizing: border-box;}
+    body {overflow-x: hidden;}
+    ul {list-style-type: none;}
+    #move-btn {
+      width: 200px;
+      height: 200px;
+      background-color: #fff;
+      border-radius : 50%;
+      position: fixed;
+      bottom: 10px;
+      left: 50vw;
+      transform: translate(-50%, 0);
+      /* flex set */
+      display:flex;
+      justify-content: center;
+      align-items: center;
+    }
+    #root {
+      width:100vw;
+      height:100vh;
+      background-color:cadetblue;
+      /* flex set */
+      display:flex;
+      justify-content: center;
+      align-items: center;
+    }
+    #root > main {
+      width: 500px;
+      height: 500px;
+      border: 1px dotted black;
+      /* flex set */
+      display:flex;
+      justify-content: center;
+      align-items: center;
+    }
+    #root > main > section {
+      /* flex set */
+      display:flex;
+      justify-content: center;
+      align-items: center;
+    }
+    #root > main > section ul li {
+      width: 100%;
+      height: 50px;
+      background-color: #fff;
+      border: 1px solid black;
+    }
+    #root > main > section:first-child {
+      width:200px;
+      height:450px;
+      border: 1px solid black;
+    }
+    #root > main > section:last-child {
+      width:200px;
+      height:450px;
+      border: 1px solid blue;
+    }
+  </style>
+</head>
+<body>
+  <!--동적 요소 생성-->
+<script>
+  // querySelector 로 body 태그 스크립트 생성
+  const body = document.querySelector('body');
+
+  // createElement 로 태그들 동적으로 생성하기 
+  function createElem(tag, id) {
+    const elem = document.createElement(tag);
+    if (id) {
+      elem.id = id;
+    }
+    return elem;
+  }
+
+  const aside = createElem('aside', 'move-btn');
+  const div = createElem('div', 'root');
+  const main = createElem('main');
+  const leftSection = createElem('section', 'left-sect');
+  const rightSection = createElem('section', 'right-sect');
+  const ul = document.createElement('ul');
+  const rightUl = document.createElement('ul');
+
+  // 동적으로 <li> 요소들을 생성하고 내용 추가하기 => 반복문
+  for(let i = 1; i <= 5; i++){
+    const li = createElem('li');
+    li.textContent = 'item-' + i;
+    ul.appendChild(li);
+  }
+
+  // h1 생성
+  const h1 = document.createElement('h1');
+  h1.textContent = 'move!';
+
+  // 요소들을 문서에 추가
+  body.appendChild(aside);
+  aside.appendChild(h1);
+  body.appendChild(div);
+  div.appendChild(main);
+  main.appendChild(leftSection);
+  leftSection.appendChild(ul);
+  main.appendChild(rightSection);
+  rightSection.appendChild(rightUl);
+
+</script>
+</body>
+</html>
