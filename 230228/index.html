@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root">
+    <div id="AboutMe"></div>
+  </div>
+  <script>
+    const AboutMe = document.getElementById('AboutMe');
+
+    let aboutMeInfo = { "myName": "엠버", "age": 25 };
+
+    function getAboutMe(myName, age) {
+      return `이름은 ${myName}이고, 나이는 ${age}입니다.`;
+    }
+
+    AboutMe.innerText = getAboutMe(aboutMeInfo.myName, aboutMeInfo.age);
+  </script>
+</body>
+</html>
