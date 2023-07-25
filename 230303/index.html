@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #slide {
+      overflow: hidden;
+      width: 1000px;
+      height: 1000px;
+    }
+    #slide section {
+      display: none;
+    }
+    #slide section:first-child {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div id="root">
+    <main id="slide">
+      <section>
+        <img src="baking.png" alt="베이킹임파서블">
+        <p>베이킹 임파서블</p>
+      </section>
+      <section>
+        <img src="goodgirls.png" alt="굿걸즈">
+        <p>굿걸즈</p>
+      </section>
+      <section>
+        <img src="star.png" alt="별나도괜찮아">
+        <p>별나도 괜찮아</p>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    //캐러셀 슬라이드
+    const slideContainer = document.getElementById('slide');
+    const slides = slideContainer.getElementsByTagName('section');
+    let currentSlide = 0;
+
+    function showSlide(index) {
+      // 모든 슬라이드 숨기기
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = 'none';
+      }
+      // 현재 슬라이드 보이기
+      slides[index].style.display = 'block';
+    }
+
+    function nextSlide() {
+      currentSlide++;
+      if (currentSlide >= slides.length) {
+        currentSlide = 0; // 마지막 슬라이드일 경우 처음으로 되돌아감
+      }
+      showSlide(currentSlide);
+    }
+
+
+    setInterval(nextSlide, 2000);
+  </script>
+</body>
+</html>
