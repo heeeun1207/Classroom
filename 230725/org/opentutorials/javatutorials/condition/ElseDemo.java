@@ -1,7 +1,7 @@
 package org.opentutorials.javatutorials.condition;
- 
+
 public class ElseDemo {
- 
+
     public static void main(String[] args) {
         if (false) {
             System.out.println(1);
@@ -12,7 +12,7 @@ public class ElseDemo {
         } else {
             System.out.println(4);
         }
- 
+
     }
- 
+
 }
