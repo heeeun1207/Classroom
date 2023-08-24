@@ -42,36 +42,48 @@ KDT-2 학생들을 모두 조회해서 팀을 나눠야 함
 // console.log(`Total students: ${studentList.length}`);
 // console.log(`Total teams: ${teams.length}`);
 
+
+
+// 배열을 무작위로 섞는 함수
 function shuffleArray(array) {
   for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
+    const j = Math.floor(Math.random() * (i + 1)); // 배열 내 인덱스를 랜덤하게 선택
+    [array[i], array[j]] = [array[j], array[i]]; // 선택한 인덱스와 현재 인덱스의 값을 교환
   }
 }
 
+// 학생들을 팀으로 나누는 함수
 function divideIntoTeams(studentList, numTeams) {
-  const shuffledStudents = [...studentList];
-  shuffleArray(shuffledStudents);
+  const shuffledStudents = [...studentList]; // 학생 리스트를 복사하여 셔플될 리스트 생성
+  shuffleArray(shuffledStudents); // 학생 리스트를 섞음
 
-  const studentsPerTeam = shuffledStudents.length / numTeams;
+  const studentsPerTeam = shuffledStudents.length / numTeams; // 팀 당 할당될 학생 수 계산
   const teams = [];
 
+  // 각 팀에 학생들을 할당하는 부분
   for (let i = 0; i < numTeams; i++) {
     const team = shuffledStudents.slice(i * studentsPerTeam, (i + 1) * studentsPerTeam);
-    teams.push(team);
+    // 현재 팀에 할당된 학생들의 범위를 계산하여 배열로 만듦
+    teams.push(team); // 팀 배열에 추가
   }
 
-  return teams;
+  return teams; // 팀 배열 반환
 }
 
+// 학생 리스트와 팀 수 정의
 const studentList = ["앨리스", "밥", "찰리", "데이브", "이브", "프랭크", "그레이스", "행크", "아이비", "잭", "지니", "케이스", "로라", "맥스", "나오미", "올리버", "페넬로페", "퀸", "라이언", "사라", "톰", "우라누스", "비비안", "윌리엄", "엑스"];
+// 학생 이름 리스트
+const numTeams = 5; // 팀의 수
 
-const numTeams = 5;
+// 학생을 팀으로 나누어 배열에 저장
 const teams = divideIntoTeams(studentList, numTeams);
 
+// 팀별로 학생 목록을 출력
 teams.forEach((team, index) => {
   console.log(`Team ${index + 1}: ${team.join(", ")}`);
+  // 팀 번호와 해당 팀의 학생 목록을 출력
 });
 
+// 총 학생 수와 팀 수 출력
 console.log(`Total students: ${studentList.length}`);
 console.log(`Total teams: ${teams.length}`);
