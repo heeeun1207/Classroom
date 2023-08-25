@@ -31,3 +31,45 @@ const getRandomSet = new Set();
 // * for -> 횟수가 결정되기 때문에 제한됨
 // * while -> 조건기반 반복문 
 
+while (getRandomSet.size < studentList.length) {
+  // 조건식 : 집합 개수가 배열 개수를 초과하지 않을 때 참, 계속 반복
+  let getRandomIntData = getRandomInt(0, studentList.length);
+  if (getRandomSet.has(getRandomIntData) === false) {
+    //* Set 메서드 중 has기능은 boolean타입을 리턴함
+    getRandomSet.add(getRandomIntData);
+  }
+}
+console.log("while loop 종료");
+
+const fromSetChangeArr = Array.from(getRandomSet);
+const decideteamOrder = [];
+for (let i = 0; i < fromSetChangeArr.length; i += 5) {
+  decideteamOrder.push(fromSetChangeArr.slice(i, i + 5));
+}
+// decideteam.push(studentList[element]);
+
+// console.log(temp.length);
+// console.log(temp[0]);
+// console.log(studentList.temp[0]);
+// console.log(decidetempOrder);
+
+function detectStudentName(numberArr, targetArr) {
+  //* 난수로 결정된 [2,3,4,5,6] decideteamOrder
+  //* 값 하나를 studentList 인덱스로 조회
+  //* 조회된 값의 string(이름)을 로컬 배열에 푸시 
+  let parentArr = [];
+  for (let i = 0; i < numberArr.length; i++) {
+    let childArr = [];
+    for (let j = 0; j < numberArr[i].length; j++) {
+      if (j === 0) {
+        childArr.push(`팀장: ${targetArr[numberArr[i][j]]}`);
+      } else {
+        childArr.push(`팀원: ${targetArr[numberArr[i][j]]}`);
+      }
+    }
+    parentArr.push(childArr);
+  }
+  return parentArr;
+}
+const decideteamName = detectStudentName(decideteamOrder, studentList);
+console.log(decideteamName);
