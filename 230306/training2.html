@@ -10,39 +10,47 @@
   <title>포켓몬 API</title>
 </head>
 <body>
-  <!-- 랜덤 포켓몬에 이름을 표시할 곳을 만들자 -->
+  <!-- 랜덤 포켓몬에 정보를 표시할 곳을 만들자 -->
   <div id="root">
-    <h1 id ="pokeName"></h1>
+    <h1 id="pokeName"></h1>
+    <p id="pokeHeight"></p>
+    <p id="pokeWeight"></p>
+    <p id="pokeExperience"></p>
   </div>
 
   <script>
     // HTML의 요소를 JS에서 사용하기 위해서 참조하는 과정
     const root = document.getElementById('root');
-    const pokeNameElement =document.getElementById('pokeName');
+    const pokeNameElement = document.getElementById('pokeName');
+    const pokeHeightElement = document.getElementById('pokeHeight');
+    const pokeWeightElement = document.getElementById('pokeWeight');
+    const pokeExperienceElement = document.getElementById('pokeExperience');
 
     // 포켓몬 ID를 랜덤으로 생성하자 
-    const randomPokemonID = Math.floor(Math.random() * 898 ) + 1 
+    const randomPokemonID = Math.floor(Math.random() * 898) + 1; 
     // 포켓몬은 현재 898 종류까지 있다. 공식문서나 웹사이트를 통해서 업데이트 내용 확인할 것 
 
     // XMLHttpRequest 객체를 생성
     const xhr = new XMLHttpRequest();
     // 포켓몬 API의 URL을 동적으로 생성
-    const _URL = 'https://pokeapi.co/api/v2/pokemon/ditto';
+    const _URL = `https://pokeapi.co/api/v2/pokemon/${randomPokemonID}`;
 
     // HTTP GET 요청을 설정한다.
-    xhr.open('GET',_URL);
+    xhr.open('GET', _URL);
 
     // HTTP 요청을 보낸다 
     xhr.send();
 
     // HTTP 요청이 완료되면 실행되는 이벤트 리스너
-    xhr.addEventListener('load',function(){
-      console.log(xhr.response);
+    xhr.addEventListener('load', function(){
       // API 응답 데이터를 JSON 형태로 파싱
       const _PokeData = JSON.parse(xhr.response);
 
-      // 포켓몬 이름을 화면에 표시
-      pokeNameElement.textContent = _PokeData.name;
+      // 포켓몬 정보를 화면에 표시
+      pokeNameElement.textContent = `포켓몬 이름: ${_PokeData.name}`;
+      pokeHeightElement.textContent = `포켓몬 키: ${_PokeData.height} decimetres`;
+      pokeWeightElement.textContent = `포켓몬 무게: ${_PokeData.weight} hectograms`;
+      pokeExperienceElement.textContent = `포켓몬 경험치: ${_PokeData.base_experience}`;
     });
   </script>
 </body>
