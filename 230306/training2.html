@@ -34,7 +34,7 @@
     const xhr = new XMLHttpRequest();
     // 포켓몬 API의 URL을 동적으로 생성
     const _URL = `https://pokeapi.co/api/v2/pokemon/${randomPokemonID}`;
-
+    console.log(_URL);
     // HTTP GET 요청을 설정한다.
     xhr.open('GET', _URL);
 
