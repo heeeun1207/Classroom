@@ -45,7 +45,7 @@
     xhr.addEventListener('load', function(){
       // API 응답 데이터를 JSON 형태로 파싱
       const _PokeData = JSON.parse(xhr.response);
-
+      console.log(_PokeData); 
       // 포켓몬 정보를 화면에 표시
       pokeNameElement.textContent = `포켓몬 이름: ${_PokeData.name}`;
       pokeHeightElement.textContent = `포켓몬 키: ${_PokeData.height} decimetres`;
