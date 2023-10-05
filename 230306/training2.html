@@ -27,13 +27,14 @@
     const pokeExperienceElement = document.getElementById('pokeExperience');
 
     // 포켓몬 ID를 랜덤으로 생성하자 
-    const randomPokemonID = Math.floor(Math.random() * 898) + 1; 
+    const randomPokemonID = Math.floor(Math.random() * 1017) + 1; 
     // 포켓몬은 현재 898 종류까지 있다. 공식문서나 웹사이트를 통해서 업데이트 내용 확인할 것 
 
     // XMLHttpRequest 객체를 생성
     const xhr = new XMLHttpRequest();
     // 포켓몬 API의 URL을 동적으로 생성
     const _URL = `https://pokeapi.co/api/v2/pokemon/${randomPokemonID}`;
+    // const _URL = `https://pokeapi.co/api/v2/pokemon/1017`; 
     console.log(_URL);
     // HTTP GET 요청을 설정한다.
     xhr.open('GET', _URL);
